@@ -1,0 +1,64 @@
+nav > ul {
+  display: flex;
+  list-style: none;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.landing-page {
+  background-image: url(https://res.cloudinary.com/dnavbc7ny/image/upload/v1569249737/undraw_online_shopping_ga73_hgsd9a.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  min-height: 550px;
+}
+
+.lead-text {
+  background: rgb(255, 193, 7, 0);
+}
+.card {
+  margin-bottom: 30px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #3acc6c;
+  border: none;
+  border-radius: 20px;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #288b4a;
+  border-radius: 20px;
+}
+
+.btn-secondary {
+  color: #ffc107;
+  background-color: transparent;
+  border-radius: 20px;
+  border: 1px solid #ffc107;
+}
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #ffc107;
+  border: 1px solid #ffc107;
+}
+.home-card {
+  background-size: cover;
+  background-position: center;
+  height: 270px;
+}
+.card-title,
+.btn-small {
+  font-size: 0.7rem;
+}
+.home-card-body {
+  margin: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
