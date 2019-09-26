@@ -28,6 +28,7 @@ nav > ul > li > a {
   background-color: #3acc6c;
   border: none;
   border-radius: 20px;
+  padding: 5px 20px;
 }
 .btn-primary:hover {
   color: #fff;
@@ -40,6 +41,7 @@ nav > ul > li > a {
   background-color: transparent;
   border-radius: 20px;
   border: 1px solid #ffc107;
+  padding: 5px 20px;
 }
 .btn-secondary:hover {
   color: #fff;
@@ -56,9 +58,21 @@ nav > ul > li > a {
   font-size: 0.7rem;
 }
 .home-card-body {
-  margin: 60px;
+  margin: 35px;
   background: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.form-style {
+  max-width: 50vw;
+  margin: 0px auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid #ffc107;
 }

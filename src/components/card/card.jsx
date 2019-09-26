@@ -10,8 +10,9 @@ const Card = ({ cardData }) => {
     >
       <div className="card-body home-card-body">
         <h6 className="card-title">{cardData.name}</h6>
+        <h6 className="card-title">${cardData.price}</h6>
         <Link to={`/${cardData.url}`} className="btn btn-secondary btn-small">
-          Shop Here
+          Add To Cart
         </Link>
       </div>
     </div>

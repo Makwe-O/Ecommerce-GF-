@@ -31,6 +31,13 @@ const SHOP_DATA = [
         image:
           "https://res.cloudinary.com/dnavbc7ny/image/upload/v1569279362/ecommerce/hat4.jpg",
         price: 21.95
+      },
+      {
+        id: 50,
+        name: "ASOS DESIGN leopard borg roll back bucket hat",
+        image:
+          "https://res.cloudinary.com/dnavbc7ny/image/upload/v1569279362/ecommerce/hat4.jpg",
+        price: 21.95
       }
     ]
   },

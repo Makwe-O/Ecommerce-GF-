@@ -9,11 +9,13 @@ const CategoryPreviewCollection = ({ products }) => {
       </h2>
       <div>
         <div className="row">
-          {products.items.map(product => (
-            <div key={product.id} className="col col-xs-12 col-lg-3">
-              <Card cardData={product} />
-            </div>
-          ))}
+          {products.items
+            .filter((product, index) => index < 4)
+            .map(product => (
+              <div key={product.id} className="col col-xs-12 col-lg-3">
+                <Card cardData={product} />
+              </div>
+            ))}
         </div>
       </div>
     </div>

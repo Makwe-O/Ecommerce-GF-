@@ -1,6 +1,5 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
-import "./homepage.css";
 import { Link } from "react-router-dom";
 const Homepage = () => {
   const props = useSpring({
@@ -18,33 +17,6 @@ const Homepage = () => {
   });
   return (
     <>
-      <nav className="navbar navbar-light bg-light">
-        <a className="navbar-brand" href="#home">
-          Ecommerce
-        </a>
-        <ul className="">
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="#singup"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Sign Up
-            </a>
-          </li>
-          <li>
-            <a
-              class="btn btn-secondary"
-              href="#signin"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Sign In
-            </a>
-          </li>
-        </ul>
-      </nav>
       <div className="navbar landing-page">
         <animated.div style={props2}>
           <div class="jumbotron lead-text">
