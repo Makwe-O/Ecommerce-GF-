@@ -6,7 +6,8 @@ import SignUpPage from "./pages/signuppage/signuppage";
 import "./App.css";
 import Header from "./components/header/header";
 import { Switch, Route } from "react-router-dom";
-import { auth } from './utilities/firebase/firebase'
+import { auth, createUserProfile } from './utilities/firebase/firebase'
+
 
 class App extends Component {
   state = {
@@ -16,10 +17,8 @@ class App extends Component {
   unsubscribeFromAuth = null
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({
-        currentUser: user.displayName
-      })
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+      createUserProfile(user);
     })
   }
 
