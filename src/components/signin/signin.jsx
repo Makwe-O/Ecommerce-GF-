@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { signInWithGoogle } from '../../utilities/firebase/firebase'
 class SignIn extends Component {
   state = {
     email: "",
@@ -18,7 +19,7 @@ class SignIn extends Component {
     this.setState({
       [name]: value
     });
-    console.log(this.state.email);
+
   };
 
   render() {
@@ -58,7 +59,7 @@ class SignIn extends Component {
           </form>
           <div className="text-center">
             <h6> Or </h6>
-            <button type="submit" class="btn btn-secondary">
+            <button onClick={signInWithGoogle} class="btn btn-secondary">
               Sign In With Google
             </button>
           </div>
