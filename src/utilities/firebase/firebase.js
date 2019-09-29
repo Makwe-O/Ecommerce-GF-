@@ -5,17 +5,18 @@ import { config } from '../../firebase'
 
 
 // Create user profile on firebase
-export const createUserProfile = async (userAuth) => {
+export const createUserProfile = async (userAuth, otherInfo) => {
     if (!userAuth) return;
-    const { displayName, email, uid } = userAuth
-    const userRef = firestore.doc(`/users/${uid}`)
+    const { displayName, email, uid } = userAuth;
+    const userRef = firestore.doc(`/users/${uid}`);
+    const snapshot = await userRef.get();
 
-    if (!userAuth.exists) {
+    if (!snapshot.exists) {
         const createdAt = new Date();
 
         try {
             await userRef.set({
-                displayName, email, createdAt
+                displayName, email, createdAt, ...otherInfo
             })
         } catch (err) {
             console.log("An error occured", err)
