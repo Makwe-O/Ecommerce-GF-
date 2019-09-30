@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../../utilities/firebase/firebase";
 import { connect } from "react-redux";
 
-const Header = currentUser => {
+const Header = ({ currentUser }) => {
   return (
     <nav className="navbar navbar-light bg-light">
       <Link to="/" className="navbar-brand" href="#home">
@@ -52,8 +52,7 @@ const mapStateToProps = state => {
   const {
     userReducer: { currentUser }
   } = state;
-
-  return currentUser;
+  return { currentUser };
 };
 
 export default connect(mapStateToProps)(Header);

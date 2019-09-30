@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { auth, signInWithGoogle } from '../../utilities/firebase/firebase'
+import { auth, signInWithGoogle } from "../../utilities/firebase/firebase";
 class SignIn extends Component {
   state = {
     email: "",
@@ -10,30 +10,26 @@ class SignIn extends Component {
     const { email, password } = this.state;
     e.preventDefault();
     try {
-      const { user } = await auth.signInWithEmailAndPassword(email, password)
+      const { user } = await auth.signInWithEmailAndPassword(email, password);
       this.setState({
         email: "",
         password: ""
       });
-      console.log(user)
-
     } catch (error) {
-      if (error.code === 'auth/wrong-password') {
-        alert('Email or Password is incorrect.');
+      if (error.code === "auth/wrong-password") {
+        alert("Email or Password is incorrect.");
       } else {
-        alert('An error occured', error)
+        alert("An error occured", error);
       }
     }
   };
 
   handleChange = e => {
-
     const { value, name } = e.target;
 
     this.setState({
       [name]: value
     });
-
   };
 
   render() {
