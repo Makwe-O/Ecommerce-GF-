@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Homepage from "./pages/homepage/homepage";
 import Shop from "./pages/shoppage/shoppage";
 import SignInPage from "./pages/signinpage/signinpage";
@@ -6,44 +6,40 @@ import SignUpPage from "./pages/signuppage/signuppage";
 import "./App.css";
 import Header from "./components/header/header";
 import { Switch, Route } from "react-router-dom";
-import { auth, createUserProfile } from './utilities/firebase/firebase'
-
+import { auth, createUserProfile } from "./utilities/firebase/firebase";
+import { connect } from "react-redux";
+import * as userActions from "./actions/userActions";
 
 class App extends Component {
-  state = {
-    currentUser: null
-  }
-
-  unsubscribeFromAuth = null
+  unsubscribeFromAuth = null;
 
   componentDidMount() {
+    const { setCurrentUser } = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfile(userAuth);
 
         userRef.onSnapshot(snapshot => {
-          this.setState({
+          setCurrentUser({
             currentUser: { id: snapshot.id, ...snapshot.data() }
-          })
-          console.log(this.state)
-        })
+          });
+        });
       } else {
-        this.setState({
+        setCurrentUser({
           currentUser: userAuth
-        })
+        });
       }
-
-    })
+    });
   }
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
   render() {
-    const { currentUser } = this.state
+    console.log(this.props);
     return (
       <div>
-        <Header currentUser={currentUser} />
+        <Header />
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/signin" component={SignInPage} />
@@ -55,6 +51,11 @@ class App extends Component {
     );
   }
 }
+const mapDispatchToProps = {
+  setCurrentUser: userActions.setCurrentUser
+};
 
-
-export default App;
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);
