@@ -1,10 +1,13 @@
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
 nav > ul {
   display: flex;
   list-style: none;
 }
 
-nav > ul > li > a {
-  text-decoration: none;
+nav > ul > li {
   padding: 0.5rem;
   margin-right: 0.5rem;
 }
@@ -75,4 +78,33 @@ input[type="password"] {
   border: none;
   border-radius: 0px;
   border-bottom: 1px solid #ffc107;
+}
+.shopping-cart {
+  position: relative;
+}
+
+.shopping-cart svg {
+  position: absolute;
+  width: 40px;
+  right: -10px;
+}
+.item-count {
+  position: relative;
+  right: -3px;
+}
+
+.cart-dropdown {
+  width: 350px;
+  height: 200px;
+  position: absolute;
+  background: #fff;
+  box-shadow: 1px 1px 5px rgb(148, 148, 148);
+  border: 1px solid #ffc107;
+  z-index: 100;
+  right: 2%;
+  top: 113%;
+  padding: 30px;
+}
+.hidden {
+  display: none;
 }

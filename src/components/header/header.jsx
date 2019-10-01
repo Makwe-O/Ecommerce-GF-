@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { auth } from "../../utilities/firebase/firebase";
 import { connect } from "react-redux";
 
+import CartIcon from "../cartIcon/cartIcon";
+import CartDropDown from "../cartDropDown/cartDropDown";
+
 const Header = ({ currentUser }) => {
   return (
     <nav className="navbar navbar-light bg-light">
@@ -28,6 +31,12 @@ const Header = ({ currentUser }) => {
                 Sign Out
               </button>
             </li>
+            <li>
+              <Link className="shopping-cart">
+                <CartIcon />
+              </Link>
+            </li>
+            <CartDropDown />
           </>
         ) : (
           <>

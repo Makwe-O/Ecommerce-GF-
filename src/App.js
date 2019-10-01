@@ -8,7 +8,7 @@ import Header from "./components/header/header";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { auth, createUserProfile } from "./utilities/firebase/firebase";
 import { connect } from "react-redux";
-import * as userActions from "./actions/userActions";
+import * as userActions from "./actions/user/userActions";
 
 class App extends Component {
   unsubscribeFromAuth = null;
