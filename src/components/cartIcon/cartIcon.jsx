@@ -12,7 +12,9 @@ const CartIcon = ({ toggleCartIcon, cartItems }) => {
       }}
     >
       <ShoppingIcon />
-      <span className="item-count">1</span>
+      <span className="item-count">
+        {cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0)}
+      </span>
     </div>
   );
 };
@@ -21,7 +23,7 @@ const mapStateToProps = state => {
   const {
     cartReducer: { cartItems }
   } = state;
-  return cartItems;
+  return { cartItems };
 };
 
 const mapDispatchToProps = {

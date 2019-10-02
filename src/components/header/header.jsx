@@ -27,9 +27,13 @@ const Header = ({ currentUser }) => {
               </Link>
             </li>
             <li>
-              <button onClick={() => auth.signOut()} class="btn btn-secondary">
+              <Link
+                to="/"
+                onClick={() => auth.signOut()}
+                class="btn btn-secondary"
+              >
                 Sign Out
-              </button>
+              </Link>
             </li>
             <li>
               <Link className="shopping-cart">
