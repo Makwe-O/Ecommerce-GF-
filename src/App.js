@@ -9,6 +9,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { auth, createUserProfile } from "./utilities/firebase/firebase";
 import { connect } from "react-redux";
 import * as userActions from "./actions/user/userActions";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -38,6 +40,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <ToastContainer autoClose={5000} />
         <Header />
         <Switch>
           <Route exact path="/" component={Homepage} />

@@ -108,3 +108,7 @@ input[type="password"] {
 .hidden {
   display: none;
 }
+
+.home-background {
+  background: #ffc107 !important;
+}
