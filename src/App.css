@@ -94,8 +94,8 @@ input[type="password"] {
 }
 
 .cart-dropdown {
-  width: 350px;
-  height: 200px;
+  width: 370px;
+  max-height: 350px;
   position: absolute;
   background: #fff;
   box-shadow: 1px 1px 5px rgb(148, 148, 148);
@@ -111,4 +111,38 @@ input[type="password"] {
 
 .home-background {
   background: #ffc107 !important;
+}
+
+.cart-item img {
+  width: 15%;
+}
+.cart-item {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  max-height: 250px;
+}
+.cart-item-container {
+  display: flex;
+  font-size: 0.7rem;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.cart-item-container .cart-body {
+  margin-left: 10px;
+}
+
+#style-2::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+#style-2::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+#style-2::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #494949;
 }

@@ -3,7 +3,7 @@ import { ReactComponent as ShoppingIcon } from "../../assets/cart.svg";
 import { connect } from "react-redux";
 import * as cartActions from "../../actions/cart/cartAction";
 
-const CartIcon = ({ toggleCartIcon }) => {
+const CartIcon = ({ toggleCartIcon, cartItems }) => {
   return (
     <div
       className="shopping-cart"
@@ -17,10 +17,17 @@ const CartIcon = ({ toggleCartIcon }) => {
   );
 };
 
+const mapStateToProps = state => {
+  const {
+    cartReducer: { cartItems }
+  } = state;
+  return cartItems;
+};
+
 const mapDispatchToProps = {
   toggleCartIcon: cartActions.toggleCartIcon
 };
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(CartIcon);

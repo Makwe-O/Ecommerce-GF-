@@ -12,7 +12,6 @@ const cartReducer = (state = INITIAL_STATE, { type, payload }) => {
         showCartDropDown: !state.showCartDropDown
       };
     case "ADD_ITEM_SUCCESS":
-      console.log(payload.cartItem, "h;jSFSFbnj;n");
       return {
         ...state,
         cartItems: handleDuplicatesInCart(state.cartItems, payload.cartItem)
