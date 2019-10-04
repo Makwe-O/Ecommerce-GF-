@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 
 import CartIcon from "../cartIcon/cartIcon";
 import CartDropDown from "../cartDropDown/cartDropDown";
+import { createStructuredSelector } from "reselect";
+import { selectCurrentUser } from "../../selectors/user/user";
 
 const Header = ({ currentUser }) => {
   return (
@@ -61,11 +63,8 @@ const Header = ({ currentUser }) => {
   );
 };
 
-const mapStateToProps = state => {
-  const {
-    userReducer: { currentUser }
-  } = state;
-  return { currentUser };
-};
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
+});
 
 export default connect(mapStateToProps)(Header);

@@ -9,6 +9,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { auth, createUserProfile } from "./utilities/firebase/firebase";
 import { connect } from "react-redux";
 import * as userActions from "./actions/user/userActions";
+import { selectCurrentUser } from "./selectors/user/user";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -65,13 +66,9 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  const {
-    userReducer: { currentUser }
-  } = state;
-
-  return { currentUser };
-};
+const mapStateToProps = state => ({
+  currentUser: selectCurrentUser(state)
+});
 const mapDispatchToProps = {
   setCurrentUser: userActions.setCurrentUser
 };
