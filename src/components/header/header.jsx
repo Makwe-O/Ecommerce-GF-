@@ -1,44 +1,44 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { auth } from "../../utilities/firebase/firebase";
-import { connect } from "react-redux";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { auth } from '../../utilities/firebase/firebase';
+import { connect } from 'react-redux';
 
-import CartIcon from "../cartIcon/cartIcon";
-import CartDropDown from "../cartDropDown/cartDropDown";
-import { createStructuredSelector } from "reselect";
-import { selectCurrentUser } from "../../selectors/user/user";
+import CartIcon from '../cartIcon/cartIcon';
+import CartDropDown from '../cartDropDown/cartDropDown';
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from '../../selectors/user/user';
 
 const Header = ({ currentUser }) => {
   return (
-    <nav className="navbar navbar-light bg-light">
-      <Link to="/" className="navbar-brand" href="#home">
+    <nav className='navbar navbar-light bg-light'>
+      <Link to='/' className='navbar-brand' href='#home'>
         Ecommerce
       </Link>
 
-      <ul className="">
+      <ul className=''>
         <li>
-          <Link to="/shop" class="btn btn-secondary">
+          <Link to='/shop' class='btn btn-secondary'>
             Shop
           </Link>
         </li>
         {currentUser ? (
           <>
             <li>
-              <Link to="/contact" class="btn btn-secondary">
+              <Link to='/contact' class='btn btn-secondary'>
                 Contact
               </Link>
             </li>
             <li>
               <Link
-                to="/"
+                to='/'
                 onClick={() => auth.signOut()}
-                class="btn btn-secondary"
+                class='btn btn-secondary'
               >
                 Sign Out
               </Link>
             </li>
             <li>
-              <Link className="shopping-cart">
+              <Link className='shopping-cart'>
                 <CartIcon />
               </Link>
             </li>
@@ -47,12 +47,12 @@ const Header = ({ currentUser }) => {
         ) : (
           <>
             <li>
-              <Link to="/signup" class="btn btn-secondary">
+              <Link to='/signup' class='btn btn-secondary'>
                 Sign Up
               </Link>
             </li>
             <li>
-              <Link to="/signin" class="btn btn-secondary">
+              <Link to='/signin' class='btn btn-secondary'>
                 Sign In
               </Link>
             </li>

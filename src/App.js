@@ -1,17 +1,19 @@
-import React, { Component } from "react";
-import Homepage from "./pages/homepage/homepage";
-import Shop from "./pages/shoppage/shoppage";
-import SignInPage from "./pages/signinpage/signinpage";
-import SignUpPage from "./pages/signuppage/signuppage";
-import "./App.css";
-import Header from "./components/header/header";
-import { Switch, Route, Redirect } from "react-router-dom";
-import { auth, createUserProfile } from "./utilities/firebase/firebase";
-import { connect } from "react-redux";
-import * as userActions from "./actions/user/userActions";
-import { selectCurrentUser } from "./selectors/user/user";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import React, { Component } from 'react';
+import Homepage from './pages/homepage/homepage';
+import Shop from './pages/shoppage/shoppage';
+import SignInPage from './pages/signinpage/signinpage';
+import SignUpPage from './pages/signuppage/signuppage';
+import CheckOutPage from './pages/checkOut/checkOut';
+import './App.css';
+import Header from './components/header/header';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { auth, createUserProfile } from './utilities/firebase/firebase';
+import { connect } from 'react-redux';
+import * as userActions from './actions/user/userActions';
+import { selectCurrentUser } from './selectors/user/user';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import NotFoundPage from './pages/notFound/notFoundPage';
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -44,22 +46,25 @@ class App extends Component {
         <ToastContainer autoClose={5000} />
         <Header />
         <Switch>
-          <Route exact path="/" component={Homepage} />
+          <Route exact path='/' component={Homepage} />
           <Route
             exact
-            path="/signin"
+            path='/signin'
             render={() =>
-              this.props.currentUser ? <Redirect to="/" /> : <SignInPage />
+              this.props.currentUser ? <Redirect to='/' /> : <SignInPage />
             }
           />
           <Route
             exact
-            path="/signup"
+            path='/signup'
             render={() =>
-              this.props.currentUser ? <Redirect to="/" /> : <SignUpPage />
+              this.props.currentUser ? <Redirect to='/' /> : <SignUpPage />
             }
           />
-          <Route exact path="/shop" component={Shop} />
+          <Route exact path='/shop' component={Shop} />
+          <Route exact path='/checkout' component={CheckOutPage} />
+
+          <Route component={NotFoundPage} />
         </Switch>
       </div>
     );
