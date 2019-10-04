@@ -156,3 +156,9 @@ input[type='password'] {
   max-width: 500px;
   height: auto;
 }
+tbody img {
+  width: 70px;
+}
+.table td {
+  vertical-align: middle;
+}

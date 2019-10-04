@@ -7,8 +7,9 @@ import {
   selectShowCartDropDown,
   selectCartItems
 } from '../../selectors/cart/cart';
+import * as cartActions from '../../actions/cart/cartAction';
 
-const CartDropDown = ({ toggleCart, cartItems }) => {
+const CartDropDown = ({ toggleCart, cartItems, toggleCartIcon }) => {
   return (
     <div className={`cart-dropdown ${toggleCart ? '' : 'hidden'}`}>
       {cartItems.length !== 0 ? (
@@ -21,7 +22,13 @@ const CartDropDown = ({ toggleCart, cartItems }) => {
         <div className='text-center'>No items are in the cart yet </div>
       )}
       <div className='text-center mt-3'>
-        <Link to='/checkout' className='btn-secondary'>
+        <Link
+          to='/checkout'
+          className='btn-secondary'
+          onClick={() => {
+            toggleCartIcon();
+          }}
+        >
           Checkout
         </Link>
       </div>
@@ -34,7 +41,11 @@ const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems
 });
 
+const mapDispatchToProps = {
+  toggleCartIcon: cartActions.toggleCartIcon
+};
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(CartDropDown);
