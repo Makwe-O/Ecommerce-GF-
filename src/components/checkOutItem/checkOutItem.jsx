@@ -1,5 +1,8 @@
 import React from 'react';
-const CheckOutItem = ({ cartItem: { image, name, quantity, price } }) => {
+import { connect } from 'react-redux';
+import * as cartActions from '../../actions/cart/cartAction';
+const CheckOutItem = ({ cartItem, removeItemFromCart }) => {
+  const { image, name, quantity, price } = cartItem;
   return (
     <tr>
       <th>
@@ -8,9 +11,21 @@ const CheckOutItem = ({ cartItem: { image, name, quantity, price } }) => {
       <td>{name}</td>
       <td>{quantity}</td>
       <td>${price}</td>
-      <td>X</td>
+      <td
+        onClick={() => {
+          removeItemFromCart(cartItem);
+        }}
+      >
+        X
+      </td>
     </tr>
   );
 };
+const mapDispatchToProps = {
+  removeItemFromCart: cartActions.removeItemFromCart
+};
 
-export default CheckOutItem;
+export default connect(
+  null,
+  mapDispatchToProps
+)(CheckOutItem);

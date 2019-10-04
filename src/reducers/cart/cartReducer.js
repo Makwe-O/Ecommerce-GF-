@@ -1,4 +1,4 @@
-import { handleDuplicatesInCart } from "../../utilities/cart/cart";
+import { handleDuplicatesInCart } from '../../utilities/cart/cart';
 const INITIAL_STATE = {
   showCartDropDown: false,
   cartItems: []
@@ -6,15 +6,23 @@ const INITIAL_STATE = {
 
 const cartReducer = (state = INITIAL_STATE, { type, payload }) => {
   switch (type) {
-    case "TOGGLE_CART_ICON":
+    case 'TOGGLE_CART_ICON':
       return {
         ...state,
         showCartDropDown: !state.showCartDropDown
       };
-    case "ADD_ITEM_SUCCESS":
+    case 'ADD_ITEM_SUCCESS':
       return {
         ...state,
         cartItems: handleDuplicatesInCart(state.cartItems, payload.cartItem)
+      };
+    case 'REMOVE_ITEM_SUCCESS':
+      const newCart = state.cartItems.filter(
+        cartItem => cartItem.id !== payload.cartItem.id
+      );
+      return {
+        ...state,
+        cartItems: [...newCart]
       };
 
     default:
