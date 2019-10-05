@@ -5,17 +5,19 @@ export const toggleCartIcon = () => dispatch => {
   });
 };
 
-export const addItemToCart = item => dispatch => {
+export const addItemToCart = (item, disableToast) => dispatch => {
   try {
     dispatch({
       type: 'ADD_ITEM_SUCCESS',
       payload: { cartItem: item }
     });
 
-    toast.success(`${item.name} has been added to the cart`, {
-      position: toast.POSITION.TOP_CENTER,
-      className: 'home-background'
-    });
+    if (!disableToast) {
+      toast.success(`${item.name} has been added to the cart`, {
+        position: toast.POSITION.TOP_CENTER,
+        className: 'home-background'
+      });
+    }
   } catch {
     dispatch({
       type: 'ADD_ITEM_FAILURE'
@@ -26,17 +28,26 @@ export const addItemToCart = item => dispatch => {
   }
 };
 
-export const removeItemFromCart = item => dispatch => {
+export const subtractQuantityFromItemInCart = item => dispatch => {
+  dispatch({
+    type: 'SUBTRACT_QUANTITY_SUCESS',
+    payload: { cartItem: item }
+  });
+};
+
+export const removeItemFromCart = (item, disableToast) => dispatch => {
   try {
     dispatch({
       type: 'REMOVE_ITEM_SUCCESS',
       payload: { cartItem: item }
     });
 
-    toast.success(`${item.name} has been removed from the cart`, {
-      position: toast.POSITION.TOP_CENTER,
-      className: 'home-background'
-    });
+    if (!disableToast) {
+      toast.success(`${item.name} has been removed from the cart`, {
+        position: toast.POSITION.TOP_CENTER,
+        className: 'home-background'
+      });
+    }
   } catch {
     dispatch({
       type: 'REMOVE_ITEM_FAILURE'

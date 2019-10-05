@@ -162,3 +162,15 @@ tbody img {
 .table td {
   vertical-align: middle;
 }
+.rotate svg {
+  transform: rotate(180deg);
+}
+
+.arrow {
+  cursor: pointer;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+}

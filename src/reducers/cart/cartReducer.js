@@ -1,4 +1,7 @@
-import { handleDuplicatesInCart } from '../../utilities/cart/cart';
+import {
+  handleDuplicatesInCart,
+  removeDuplicatesInCart
+} from '../../utilities/cart/cart';
 const INITIAL_STATE = {
   showCartDropDown: false,
   cartItems: []
@@ -23,6 +26,16 @@ const cartReducer = (state = INITIAL_STATE, { type, payload }) => {
       return {
         ...state,
         cartItems: [...newCart]
+      };
+
+    case 'SUBTRACT_QUANTITY_SUCESS':
+      console.log(
+        'present',
+        removeDuplicatesInCart(state.cartItems, payload.cartItem)
+      );
+      return {
+        ...state,
+        cartItems: removeDuplicatesInCart(state.cartItems, payload.cartItem)
       };
 
     default:
