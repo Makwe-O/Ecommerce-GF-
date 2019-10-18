@@ -25,6 +25,7 @@ nav > ul > li {
 }
 .card {
   margin-bottom: 30px;
+  box-shadow: 0px 12px 20px #c1c1c1;
 }
 .btn-primary {
   color: #fff;
