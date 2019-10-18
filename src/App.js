@@ -64,7 +64,7 @@ class App extends Component {
           <Route exact path='/shop' component={Shop} />
           <Route exact path='/checkout' component={CheckOutPage} />
 
-          <Route component={NotFoundPage} />
+          <Route exact path='/notfound' component={NotFoundPage} />
         </Switch>
       </div>
     );
