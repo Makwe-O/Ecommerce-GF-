@@ -13,6 +13,7 @@ const StripeCheckoutButton = ({ price }) => {
   };
   return (
     <StripeCheckout
+      class='payButton'
       label='Pay Now with Stripe'
       name='Hat Attack'
       billingAddress

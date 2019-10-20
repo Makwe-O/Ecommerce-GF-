@@ -5,6 +5,7 @@ import { selectCartItems } from '../../selectors/cart/cart';
 import { selectCartItemTotalPrice } from '../../selectors/cart/cart';
 import CheckOutItem from '../../components/checkOutItem/checkOutItem';
 import StripeCheckoutButton from '../../components/stripeButton/stripeButton';
+import PayStackCheckoutButton from '../../components/payStackButton/payStackButton';
 const CheckOutPage = ({ cartItems, totalPrice }) => {
   return (
     <div className='mt-5 container'>
@@ -29,7 +30,10 @@ const CheckOutPage = ({ cartItems, totalPrice }) => {
           </table>
           <div class='checkout__footer'>
             <h2 className='lead'>Total: ${totalPrice}</h2>
-            <StripeCheckoutButton price={totalPrice} />
+            <div>
+              <StripeCheckoutButton price={totalPrice} class='stripe' />
+              <PayStackCheckoutButton price={totalPrice} />
+            </div>
           </div>
           <p>
             Please note the payment integration is in test mode. Please use card

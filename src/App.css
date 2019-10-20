@@ -72,6 +72,24 @@ nav > ul > li {
   height: 40px;
   width: 90px;
 }
+.payButton,
+.StripeCheckout {
+  background: #ffc107 !important;
+  border: none !important;
+  border-radius: 20px !important;
+  color: #fff !important;
+  padding: 0.5rem 1rem !important;
+  margin: 1rem !important;
+}
+.StripeCheckout > span {
+  background-image: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-weight: 400 !important;
+  text-shadow: none !important;
+  border: none !important;
+  display: inline;
+}
 
 .checkout__footer {
   display: flex;
