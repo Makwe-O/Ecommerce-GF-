@@ -68,6 +68,11 @@ nav > ul > li {
   color: #212529;
 }
 
+.navbar svg {
+  height: 40px;
+  width: 90px;
+}
+
 .checkout__footer {
   display: flex;
   justify-content: space-between;

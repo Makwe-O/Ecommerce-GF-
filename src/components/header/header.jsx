@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../../utilities/firebase/firebase';
 import { connect } from 'react-redux';
+import { ReactComponent as Logo } from '../../assets/logo.svg';
 
 import CartIcon from '../cartIcon/cartIcon';
 import CartDropDown from '../cartDropDown/cartDropDown';
@@ -12,7 +13,7 @@ const Header = ({ currentUser }) => {
   return (
     <nav className='navbar navbar-light bg-light'>
       <Link to='/' className='navbar-brand' href='#home'>
-        Ecommerce
+        <Logo /> Hat Attack
       </Link>
 
       <ul className=''>

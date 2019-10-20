@@ -17,7 +17,7 @@ const StripeCheckoutButton = ({ price }) => {
       name='Hat Attack'
       billingAddress
       shippingAddress
-      image='https://res.cloudinary.com/dnavbc7ny/image/upload/v1571605440/ecommerce/undraw_make_it_rain_iwk4.png'
+      image='https://res.cloudinary.com/dnavbc7ny/image/upload/v1571607872/ecommerce/undraw_plain_credit_card_c8b8.svg'
       description={`Your total is $${price}`}
       amount={stripePrice}
       panelLabel='Give us your money'
