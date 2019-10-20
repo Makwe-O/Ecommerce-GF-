@@ -67,6 +67,11 @@ nav > ul > li {
 .collection-header a {
   color: #212529;
 }
+
+.checkout__footer {
+  display: flex;
+  justify-content: space-between;
+}
 .home-card-body {
   margin: 35px;
   background: rgba(255, 255, 255, 0.9);

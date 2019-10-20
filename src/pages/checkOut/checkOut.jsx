@@ -4,6 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectCartItems } from '../../selectors/cart/cart';
 import { selectCartItemTotalPrice } from '../../selectors/cart/cart';
 import CheckOutItem from '../../components/checkOutItem/checkOutItem';
+import StripeCheckoutButton from '../../components/stripeButton/stripeButton';
 const CheckOutPage = ({ cartItems, totalPrice }) => {
   return (
     <div className='mt-5 container'>
@@ -26,9 +27,14 @@ const CheckOutPage = ({ cartItems, totalPrice }) => {
               ))}
             </tbody>
           </table>
-          <div>
+          <div class='checkout__footer'>
             <h2 className='lead'>Total: ${totalPrice}</h2>
+            <StripeCheckoutButton price={totalPrice} />
           </div>
+          <p>
+            Please note the payment integration is in test mode. Please use card
+            number <code>4242 4242 4242 4242</code>
+          </p>
         </>
       ) : (
         <div className='mt-5 text-center'>
