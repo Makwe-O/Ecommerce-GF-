@@ -61,6 +61,12 @@ nav > ul > li {
 .btn-small {
   font-size: 0.7rem;
 }
+.header {
+  text-transform: capitalize;
+}
+.collection-header a {
+  color: #212529;
+}
 .home-card-body {
   margin: 35px;
   background: rgba(255, 255, 255, 0.9);
