@@ -101,7 +101,7 @@ const Homepage = () => {
                 <div className='card-body home-card-body'>
                   <h5 className='card-title'>Watch</h5>
 
-                  <Link href='shop/watch' class='btn btn-secondary'>
+                  <Link to='shop/watches' class='btn btn-secondary'>
                     Shop Here
                   </Link>
                 </div>
@@ -117,7 +117,7 @@ const Homepage = () => {
               >
                 <div className='card-body home-card-body'>
                   <h5 className='card-title'>Glasses</h5>
-                  <Link href='shop/glasses' class='btn btn-secondary'>
+                  <Link to='shop/glasses' class='btn btn-secondary'>
                     Shop Here
                   </Link>
                 </div>

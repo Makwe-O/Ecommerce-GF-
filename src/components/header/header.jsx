@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { auth } from '../../utilities/firebase/firebase';
 import { connect } from 'react-redux';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
-
 import CartIcon from '../cartIcon/cartIcon';
 import CartDropDown from '../cartDropDown/cartDropDown';
 import { createStructuredSelector } from 'reselect';
