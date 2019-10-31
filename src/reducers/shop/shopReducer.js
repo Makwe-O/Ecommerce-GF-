@@ -1,10 +1,14 @@
-import SHOP_DATA from './shopData';
 const INITIAL_STATE = {
-  collection: SHOP_DATA
+  collection: {}
 };
 
 const shopReducer = (state = INITIAL_STATE, { type, payload }) => {
   switch (type) {
+    case 'UPDATE_COLLECTION':
+      return {
+        ...state,
+        collection: payload
+      };
     default:
       return state;
   }

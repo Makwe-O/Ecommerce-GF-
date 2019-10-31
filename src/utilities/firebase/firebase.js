@@ -33,6 +33,24 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
+// Get data from firebase and convert it to usable data
+export const converCollectionsSnapshotTomap = collections => {
+  const transformedCollection = collections.docs.map(doc => {
+    const { name, items } = doc.data();
+
+    return {
+      routeName: encodeURI(name.toLowerCase()),
+      id: doc.id,
+      name,
+      items
+    };
+  });
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.name.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
+};
+
 // Setup google auth
 
 const provider = new firebase.auth.GoogleAuthProvider();
