@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCollectionForPreview } from '../../selectors/shop/shop';
 import CategoryPreviewCollection from '../category-preview-collection/category-preview-collection';
+import collectionPage from '../../pages/collection/collectionPage';
 
 const CollectionOverview = ({ collections, match }) => {
   return (

@@ -4,8 +4,6 @@ import { selectCollection } from '../../selectors/shop/shop';
 import Card from '../../components/card/card';
 
 const CollectionPage = ({ match, collection }) => {
-  console.log(collection, 'here');
-
   return (
     <div className='container header'>
       <h2 className='text-center'>{match.params.categoryId}</h2>

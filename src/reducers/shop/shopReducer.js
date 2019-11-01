@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  collection: {}
+  collection: null
 };
 
 const shopReducer = (state = INITIAL_STATE, { type, payload }) => {

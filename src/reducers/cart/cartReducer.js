@@ -29,10 +29,6 @@ const cartReducer = (state = INITIAL_STATE, { type, payload }) => {
       };
 
     case 'SUBTRACT_QUANTITY_SUCESS':
-      console.log(
-        'present',
-        removeDuplicatesInCart(state.cartItems, payload.cartItem)
-      );
       return {
         ...state,
         cartItems: removeDuplicatesInCart(state.cartItems, payload.cartItem)

@@ -5,7 +5,7 @@ const CategoryPreviewCollection = ({ products, url }) => {
   return (
     <div className=''>
       <h2 className='collection-header'>
-        <Link to={`${url}${products.url}`}>{products.name}</Link>
+        <Link to={`${url}${products.routeName}`}>{products.name}</Link>
       </h2>
       <div>
         <div className='row'>
