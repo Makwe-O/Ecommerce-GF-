@@ -5,7 +5,7 @@ import Card from '../../components/card/card';
 
 const CollectionPage = ({ match, collection }) => {
   return (
-    <div className='container header'>
+    <div className='container header mt-5'>
       <h2 className='text-center'>{match.params.categoryId}</h2>
       <div className='row mt-4'>
         {collection.items.map(item => (

@@ -3,7 +3,7 @@ import Card from '../card/card';
 import { Link } from 'react-router-dom';
 const CategoryPreviewCollection = ({ products, url }) => {
   return (
-    <div className=''>
+    <div>
       <h2 className='collection-header'>
         <Link to={`${url}${products.routeName}`}>{products.name}</Link>
       </h2>

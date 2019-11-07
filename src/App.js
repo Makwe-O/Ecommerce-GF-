@@ -14,6 +14,7 @@ import { selectCurrentUser } from './selectors/user/user';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NotFoundPage from './pages/notFound/notFoundPage';
+import Footer from './components/footer/footer';
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -66,6 +67,7 @@ class App extends Component {
 
           <Route exact path='/notfound' component={NotFoundPage} />
         </Switch>
+        <Footer />
       </div>
     );
   }

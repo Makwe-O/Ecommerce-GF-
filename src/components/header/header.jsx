@@ -12,7 +12,7 @@ const Header = ({ currentUser }) => {
   return (
     <nav className='navbar navbar-light bg-light'>
       <Link to='/' className='navbar-brand' href='#home'>
-        <Logo /> Hat Attack
+        <Logo /> Haxx Store
       </Link>
 
       <ul className=''>

@@ -23,7 +23,7 @@ const Homepage = () => {
             <h1 class='display-4'>
               Welcome to{' '}
               <strong>
-                <span style={{ color: `#ffc107` }}>Hat Attack</span>
+                <span style={{ color: `#ffc107` }}>Haxx Store</span>
               </strong>
             </h1>
             <p class='lead'>
@@ -32,11 +32,11 @@ const Homepage = () => {
               Check out what we offer
             </p>
             <hr class='my-4' />
-            <p>Eteselebo Eteselebo, Yahoo ni babalawo, Ole everybody </p>
+            <p>Premium Prices that can afford </p>
           </div>
         </animated.div>
       </div>
-      <div className='container'>
+      <div className='container mt-5'>
         <h2 className='font-weight-bold text-center'>CATEGORIES.</h2>
         <animated.div style={props2}>
           <div className='row'>

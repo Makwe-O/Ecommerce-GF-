@@ -7,7 +7,7 @@ import collectionPage from '../../pages/collection/collectionPage';
 
 const CollectionOverview = ({ collections, match }) => {
   return (
-    <div className='container'>
+    <div className='container mt-5'>
       {collections.map(collection => (
         <CategoryPreviewCollection
           key={collection.id}
