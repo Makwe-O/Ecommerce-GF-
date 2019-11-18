@@ -28,14 +28,13 @@ export const createUserProfile = async (userAuth, otherInfo) => {
   return userRef;
 };
 
-console.log(config, 'somebody');
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 // Get data from firebase and convert it to usable data
-export const converCollectionsSnapshotTomap = collections => {
+export const convertCollectionsSnapshotTomap = collections => {
   const transformedCollection = collections.docs.map(doc => {
     const { name, items } = doc.data();
 

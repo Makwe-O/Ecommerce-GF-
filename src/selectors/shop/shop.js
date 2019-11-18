@@ -7,6 +7,21 @@ export const selectCollections = createSelector(
   shopReducer => shopReducer.collection
 );
 
+export const selectCollectionsIsLoading = createSelector(
+  [selectShop],
+  shopReducer => shopReducer.isLoading
+);
+
+export const isCollectionLoaded = createSelector(
+  [selectShop],
+  shopReducer => !!shopReducer.collection
+);
+
+export const selectCollectionsErrorMessage = createSelector(
+  [selectShop],
+  shopReducer => shopReducer.errorMessage
+);
+
 export const selectCollectionForPreview = createSelector(
   [selectCollections],
   collections =>
