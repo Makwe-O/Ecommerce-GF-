@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Prata', serif;
+  font-family: "Spartan", sans-serif;
 }
 #root {
   min-height: 100%;
@@ -118,9 +118,9 @@ nav > ul > li {
   margin: 0px auto;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   border: none;
   border-radius: 0px;
   border-bottom: 1px solid #ffc107;
